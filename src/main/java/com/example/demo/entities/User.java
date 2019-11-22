@@ -1,5 +1,6 @@
 package com.example.demo.entities;
 
+import com.example.demo.domain.DomainObject;
 import org.hibernate.annotations.Cascade;
 
 import javax.persistence.CascadeType;
@@ -14,6 +15,7 @@ import java.util.Collection;
 
 @Entity
 public class User {
+public class User extends DomainObject  {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)

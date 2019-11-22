@@ -28,6 +28,8 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 		http
 				.authorizeRequests()
 				.anyRequest().hasAuthority(Authorities.LOGIN.getRoleName())
+				//.anyRequest().hasAuthority(Authorities.LOGIN.getRoleName())
+				.anyRequest().permitAll()
 				.and().httpBasic();
 //		http
 //				.authorizeRequests()
