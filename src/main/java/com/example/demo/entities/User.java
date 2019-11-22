@@ -27,6 +27,12 @@ public class User extends DomainObject  {
 	@Column(nullable = false)
 	private String password;
 
+	@Column(nullable = false)
+	private String tenant;
+
+	@Column(nullable = false)
+	private String matchStatus;
+
 	@OneToMany (
 			cascade = CascadeType.ALL,
 			orphanRemoval = true
@@ -65,4 +71,12 @@ public class User extends DomainObject  {
 	public void setGrantedRoles(Collection<Privilege> grantedRoles){
 		this.grantedRoles = grantedRoles;
 	}
+
+	public String getTenant() { return tenant; }
+
+	public void setTenant(String tenant) {this.tenant = tenant; }
+
+	public String getMatchStatus() { return matchStatus; }
+
+	public void setMatchStatus(String matchStatus) { this.matchStatus = matchStatus; }
 }

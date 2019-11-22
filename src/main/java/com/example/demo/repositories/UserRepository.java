@@ -11,5 +11,8 @@ public interface UserRepository extends JpaRepository<User, Long> {
 	@Query("select user from User as user join fetch user.grantedRoles where user.username = ?1")
 	User findByUsernameWithGrantedRoles(String username);
 
+	@Query("select user from User as user where user.username = ?1")
+	User findByUsername(String username);
+
 	void deleteByUsername(String username);
 }

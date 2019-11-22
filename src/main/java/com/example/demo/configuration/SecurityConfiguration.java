@@ -27,8 +27,6 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 	protected void configure(HttpSecurity http) throws Exception {
 		http
 				.authorizeRequests()
-				.anyRequest().hasAuthority(Authorities.LOGIN.getRoleName())
-				//.anyRequest().hasAuthority(Authorities.LOGIN.getRoleName())
 				.anyRequest().permitAll()
 				.and().httpBasic();
 //		http
