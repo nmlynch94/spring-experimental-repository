@@ -24,9 +24,10 @@ public class UserController {
     }
 
     @GetMapping(value = "/users/{username}")
-    public UserDTO getUser(@PathVariable("username") String username) {
+    public ResponseEntity<UserDTO> getUser(@PathVariable("username") String username) {
         User user = userRepository.findByUsername(username);
-        return new UserDTO();
+        ResponseEntity<UserDTO> responseEntity = ResponseEntity.ok(userMapper.toDTO(user));
+        return responseEntity;
     }
 
     @GetMapping(value = "/users/sample")
