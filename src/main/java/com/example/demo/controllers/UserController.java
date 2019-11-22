@@ -23,20 +23,11 @@ public class UserController {
         this.userRepository = userRepository;
     }
 
-    /*
-    @GetMapping(value = "/users")
-    public String getUsers() {
-        return "getUsers endpoint reached";
-    }
-    */
-    
-    /*
-    @GetMapping(value = "/users/{id}")
-    public UserDTO getUser(@PathVariable("id") long id) {
-        // TODO
+    @GetMapping(value = "/users/{username}")
+    public UserDTO getUser(@PathVariable("username") String username) {
+        User user = userRepository.findByUsername(username);
         return new UserDTO();
     }
-    */
 
     @GetMapping(value = "/users/sample")
     public ResponseEntity<UserDTO> getSampleUser() {

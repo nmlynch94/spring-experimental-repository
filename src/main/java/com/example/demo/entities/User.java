@@ -14,7 +14,6 @@ import javax.persistence.OneToMany;
 import java.util.Collection;
 
 @Entity
-public class User {
 public class User extends DomainObject  {
 
 	@Id
